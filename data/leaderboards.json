@@ -1,0 +1,61 @@
+{
+  "site": {
+    "title": "KEX-bench",
+    "long_title": "KEX-bench Leaderboard",
+    "tagline": "Evaluating Coding Agents on Kernel Exploit Generation",
+    "description": "KEX-bench evaluates whether AI agents can turn real Linux and Windows kernel vulnerabilities into verifier-confirmed exploit primitives.",
+    "version": "",
+    "author": "KEX-bench",
+    "base_url": "https://kex-bench.github.io/",
+    "contact_url": "",
+    "paper_url": "https://arxiv.org/abs/2609.25591",
+    "github_url": "https://github.com/KEX-bench/KEX-bench",
+    "submit_url": "",
+    "venue": "EMNLP 2026 Main (Oral Presentation)",
+    "footer_links": []
+  },
+  "section_description": "KEX-bench evaluates coding agents on exploit primitive generation against real Linux and Windows kernels. The benchmark contains <strong>45 task instances</strong> across <strong>40 CVEs</strong>, with deterministic, primitive-specific verification.",
+  "targets": [
+    {
+      "name": "overall",
+      "display_name": "Overall",
+      "url": "/",
+      "description": "<strong>Overall</strong> aggregates <strong>25 Linux</strong> and <strong>20 Windows</strong> task instances. Split bars show each platform’s contribution to the overall success rate."
+    },
+    {
+      "name": "linux",
+      "display_name": "Linux",
+      "url": "/linux/",
+      "description": "<strong>Linux</strong> includes <strong>25 tasks</strong> across 20 CVEs: 9 kernel address leaks, 6 instruction-pointer control tasks, 6 heap reads, and 4 heap writes."
+    },
+    {
+      "name": "windows",
+      "display_name": "Windows",
+      "url": "/windows/",
+      "description": "<strong>Windows</strong> includes <strong>20 arbitrary-address-write tasks</strong> across 20 CVEs, checked through debugger-backed memory inspection."
+    }
+  ],
+  "info_sections": [
+    {
+      "title": "News",
+      "content": "<ul><li><strong>EMNLP 2026 Main:</strong> “Evaluating Coding Agents on Kernel Exploit Generation” has been accepted for an oral presentation.</li></ul>"
+    },
+    {
+      "title": "Overview",
+      "content": "KEX-bench measures whether coding agents can construct exploit primitives against real operating-system kernels. Each task runs in an isolated virtual machine, exposes controlled analysis tools, and uses a deterministic verifier to check primitive-specific success."
+    },
+    {
+      "title": "Evaluation Settings",
+      "content": "<ul><li><strong>with PoC:</strong> the agent receives a reference trigger PoC as a starting point.</li><li><strong>without PoC:</strong> the agent receives no trigger PoC.</li></ul><p>Both settings require verifier-confirmed primitives under the official tool-call budgets. Crashes and textual claims do not count as solved tasks.</p>"
+    },
+    {
+      "title": "Scoring",
+      "content": "<p>Scores are <strong>pass@1</strong>: solved tasks divided by the full task count for the selected platform. Overall uses all 45 task instances; Linux uses 25; Windows uses 20.</p><p>Select a model to view its platform runs, primitive breakdowns, token totals, runtime, and tool-call counts.</p>"
+    }
+  ],
+  "footnote": "Results use the released 45-task evaluation suite. Each agent/model pair is evaluated once per task in each setting.",
+  "citation": {
+    "title": "Evaluating Coding Agents on Kernel Exploit Generation",
+    "text": "@inproceedings{jang2026kexbench,\n  title = {Evaluating Coding Agents on Kernel Exploit Generation},\n  author = {Jang, Junyoung and Lee, Gwanhyun and Lee, Hwiwon and Kim, Kyuheon and Kim, Jongseong and Jung, Jinho and Zhang, Lingming},\n  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},\n  year = {2026},\n  url = {https://arxiv.org/abs/2609.25591}\n}"
+  }
+}

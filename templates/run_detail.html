@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ detail.model }} · {{ detail.agent }} | KEX-bench{% endblock %}
+
+{% macro mode_value(key) -%}
+data-type_b="{{ detail.modes.type_b[key] }}" data-type_a="{{ detail.modes.type_a[key] }}"
+{%- endmacro %}
+
+{% block content %}
+<div class="run-detail-page">
+    <section class="run-page-top"><a class="run-back-link" href="{{ target.url }}">Back to {{ target.display_name }}</a></section>
+    <header class="run-hero">
+        <div class="run-hero-main">
+            <img class="run-org-logo" src="{{ detail.org_logo }}" alt="{{ detail.org }}">
+            <div class="run-hero-copy">
+                <p class="section-no">{{ target.display_name }} / run detail</p>
+                <h1 class="run-hero-title">{{ detail.agent }} · {{ detail.model }}</h1>
+                <p class="run-hero-meta">{{ detail.org }} · Rank #<span data-run-mode-value {{ mode_value('rank') }}>{{ detail.modes.type_b.rank }}</span></p>
+                <p class="run-hero-submeta" data-run-mode-value {{ mode_value('date') }}>{{ detail.modes.type_b.date }}</p>
+            </div>
+        </div>
+        <div class="score-mode-tabs run-score-tabs" aria-label="PoC setting">
+            <button type="button" class="score-mode-tab active" data-run-score-mode="type_b" aria-pressed="true"><span>with PoC</span></button>
+            <button type="button" class="score-mode-tab" data-run-score-mode="type_a" aria-pressed="false"><span>without PoC</span></button>
+        </div>
+        <section class="run-metrics" aria-label="Run summary">
+            <article class="run-metric"><strong data-run-mode-value {{ mode_value('score_label') }}>{{ detail.modes.type_b.score_label }}</strong><span>Success</span></article>
+            <article class="run-metric"><strong data-run-mode-value data-type_b="{{ detail.modes.type_b.solved }} / {{ detail.modes.type_b.total }}" data-type_a="{{ detail.modes.type_a.solved }} / {{ detail.modes.type_a.total }}">{{ detail.modes.type_b.solved }} / {{ detail.modes.type_b.total }}</strong><span>Solved Instances</span></article>
+            <article class="run-metric"><strong data-run-mode-value {{ mode_value('runtime_label') }}>{{ detail.modes.type_b.runtime_label }}</strong><span>Total Runtime</span></article>
+            <article class="run-metric"><strong data-run-mode-value {{ mode_value('tokens_label') }}>{{ detail.modes.type_b.tokens_label }}</strong><span>Total Tokens</span></article>
+        </section>
+        <div class="run-secondary-stats"><span><strong data-run-mode-value {{ mode_value('tool_calls_label') }}>{{ detail.modes.type_b.tool_calls_label }}</strong> Tool calls</span></div>
+    </header>
+    <section class="run-detail-section">
+        <div class="run-section-header"><div><h2>Run Results</h2><p>Platform runs for the selected PoC setting. Success requires a verifier-confirmed primitive.</p></div></div>
+        <div class="table-container run-table-container">
+            <table class="run-results-table" aria-label="Platform run results">
+                <thead><tr><th>Platform</th><th>Success</th><th>Primitives</th><th>Runtime</th><th>Tokens</th><th>Tools</th><th>Date</th></tr></thead>
+                <tbody>
+                    {% for run in detail.runs %}
+                    <tr class="run-instance-row {% if run.type != 'type_b' %}hidden{% endif %}" data-run-mode="{{ run.type }}">
+                        <td>{{ run.platform_label }}</td>
+                        <td class="run-num-cell"><strong>{{ run.score_label }}</strong><span class="score-count">{{ run.solved }}/{{ run.total }}</span></td>
+                        <td class="run-type-cell">{% for name, bucket in run.primitives.items() %}<span class="primitive-result"><code>{{ name | upper }}</code> {{ bucket.solved }}/{{ bucket.total }}</span>{% endfor %}</td>
+                        <td class="run-num-cell">{{ run.runtime_label }}</td><td class="run-num-cell">{{ run.tokens_label }}</td><td class="run-num-cell">{{ run.tool_calls_label }}</td><td>{{ run.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block scripts_extra %}<script src="{{ asset_url('js/run-detail.js') }}"></script>{% endblock %}

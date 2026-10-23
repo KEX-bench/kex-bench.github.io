@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% macro mode_attrs(result, mode) -%}
+{% set bucket = result.modes[mode] %}
+data-{{ mode }}-score="{{ bucket.score }}"
+data-{{ mode }}-rank="{{ bucket.rank }}"
+data-{{ mode }}-score-label="{{ bucket.score_label }}"
+data-{{ mode }}-count="{{ bucket.solved }}/{{ bucket.total }}"
+data-{{ mode }}-tokens="{{ bucket.tokens_label }}"
+data-{{ mode }}-runtime="{{ bucket.runtime_label }}"
+{% if bucket.linux is defined %}
+data-{{ mode }}-linux="{{ bucket.linux.solved }}/{{ bucket.linux.total }}"
+data-{{ mode }}-windows="{{ bucket.windows.solved }}/{{ bucket.windows.total }}"
+{% endif %}
+{%- endmacro %}
+
+{% block content %}
+<div class="mode-panels">
+    <div class="mode-panel mode-panel-active">
+        <section class="hero">
+            <div class="container wide">
+                <h1 class="title">{{ site.title }}</h1>
+                <p class="lede">{{ site.tagline }}</p>
+                <p class="hero-venue">{{ site.venue }}</p>
+            </div>
+        </section>
+        <section class="leaderboard-section" id="leaderboard">
+            <div class="container wide">
+                <p class="section-note leaderboard-section-note">{{ config.section_description | safe }}</p>
+                <div class="leaderboard-shell">
+                    <div class="leaderboard-toolbar">
+                        <div class="target-tabs" role="tablist" aria-label="KEX-bench leaderboards">
+                            {% for target in config.targets %}
+                            <button type="button" class="tab-button target-tab-button {% if target.name == active_target %}active{% endif %}"
+                                    data-tab="{{ target.name }}" data-target-url="{{ target.url }}"
+                                    data-target-description="{{ target.description }}" role="tab"
+                                    id="{{ target.name }}-tab" aria-controls="{{ target.name }}-content"
+                                    aria-selected="{{ 'true' if target.name == active_target else 'false' }}">
+                                <span>{{ target.display_name }}</span>
+                            </button>
+                            {% endfor %}
+                        </div>
+                        <div class="leaderboard-view-controls">
+                            <div class="score-mode-tabs" aria-label="PoC setting">
+                                <button type="button" class="score-mode-tab active" data-score-mode="type_b" aria-pressed="true"><span>with PoC</span></button>
+                                <button type="button" class="score-mode-tab" data-score-mode="type_a" aria-pressed="false"><span>without PoC</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="target-description" data-target-description-container>
+                        {% for target in config.targets %}{% if target.name == active_target %}{{ target.description | safe }}{% endif %}{% endfor %}
+                    </p>
+                    <div class="leaderboard-container">
+                        {% for leaderboard in leaderboards %}
+                        <div class="leaderboard-content" id="{{ leaderboard.name }}-content"
+                             role="tabpanel" aria-labelledby="{{ leaderboard.name }}-tab"
+                             {% if leaderboard.name != active_target %}style="display: none;"{% endif %}>
+                            <div class="filter-controls">
+                                <div class="filter-group">
+                                    <span class="filter-label">Model Type</span>
+                                    <div class="filter-buttons" id="{{ leaderboard.name }}-type-filter">
+                                        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                                        <button type="button" class="filter-btn" data-filter="proprietary" aria-pressed="false">Proprietary</button>
+                                        <button type="button" class="filter-btn" data-filter="open-source" aria-pressed="false">Open model</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-container">
+                                <table class="leaderboard-table" id="{{ leaderboard.name }}-table" aria-label="{{ leaderboard.display_name }} leaderboard">
+                                    <thead><tr>
+                                        <th scope="col" class="rank-col sortable" data-sort="rank">#</th>
+                                        <th scope="col" class="model-col sortable" data-sort="model">Model</th>
+                                        <th scope="col" class="resolved-col sortable active desc" data-sort="resolved">Success</th>
+                                        {% if leaderboard.name == 'overall' %}
+                                        <th scope="col" class="completed-col">Linux</th>
+                                        <th scope="col" class="completed-col">Windows</th>
+                                        {% else %}
+                                        <th scope="col" class="completed-col">Tokens</th>
+                                        <th scope="col" class="completed-col">Runtime</th>
+                                        {% endif %}
+                                        <th scope="col" class="org-col sortable" data-sort="org">Provider</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        {% for result in leaderboard.results %}
+                                        {% set primary = result.modes.type_b %}
+                                        <tr class="leaderboard-row leaderboard-row-clickable" data-scored="true"
+                                            data-type="{{ 'open-source' if result.open_source else 'proprietary' }}"
+                                            data-model="{{ result.model }} {{ result.agent }}" data-id="{{ result.id }}"
+                                            data-org="{{ result.org }}" data-resolved="{{ primary.score }}" data-rank="{{ primary.rank }}"
+                                            {{ mode_attrs(result, 'type_b') }} {{ mode_attrs(result, 'type_a') }}
+                                            data-details-url="{{ result.details_url }}" tabindex="0" role="link"
+                                            aria-label="View run details for {{ result.model }} by {{ result.agent }}">
+                                            <td class="rank-col"><span class="rank-badge {% if primary.rank == 1 %}rank-1{% endif %}" data-rank-value>{{ primary.rank }}</span></td>
+                                            <td class="model-col"><div class="model-name">
+                                                <img class="org-logo" src="{{ result.org_logo }}" alt="{{ result.org }}" loading="lazy">
+                                                <div class="model-name-stack"><a class="model-name-text model-detail-link" href="{{ result.details_url }}">{{ result.model }}</a><span class="model-meta">{{ result.agent }}</span></div>
+                                                {% if result.open_source %}<span class="badge badge-oss" title="Open model">Open</span>{% endif %}
+                                            </div></td>
+                                            <td class="resolved-col"><div class="score-cell">
+                                                <div class="score-number" data-score-value>{{ primary.score_label }}</div>
+                                                <div class="score-count" data-count-value>{{ primary.solved }}/{{ primary.total }}</div>
+                                                {% if leaderboard.name == 'overall' %}
+                                                <div class="split-score-bar" aria-label="Platform contribution split">
+                                                    {% for part in primary.projects %}
+                                                    <span class="score-segment score-segment-{{ part.name }}" style="width: {{ part.width }}%"
+                                                          data-type_b-width="{{ part.width }}" data-type_a-width="{{ result.modes.type_a.projects[loop.index0].width }}"
+                                                          data-type_b-title="{{ part.title }}" data-type_a-title="{{ result.modes.type_a.projects[loop.index0].title }}" title="{{ part.title }}"></span>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="split-legend"><span><i class="legend-dot score-segment-linux"></i>Linux</span><span><i class="legend-dot score-segment-windows"></i>Windows</span></div>
+                                                {% else %}<div class="score-bar-track"><span class="score-bar-fill" style="width: {{ primary.score }}%"></span></div>{% endif %}
+                                            </div></td>
+                                            {% if leaderboard.name == 'overall' %}
+                                            <td class="completed-col"><strong data-linux-value>{{ primary.linux.solved }}/{{ primary.linux.total }}</strong></td>
+                                            <td class="completed-col"><strong data-windows-value>{{ primary.windows.solved }}/{{ primary.windows.total }}</strong></td>
+                                            {% else %}
+                                            <td class="completed-col"><strong data-tokens-value>{{ primary.tokens_label }}</strong></td>
+                                            <td class="completed-col"><strong data-runtime-value>{{ primary.runtime_label }}</strong></td>
+                                            {% endif %}
+                                            <td class="org-col">{{ result.org }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="no-results" style="display: none;"><p>No models match the selected filters.</p></div>
+                            <div class="leaderboard-static-notes"><p class="leaderboard-static-note"><span aria-hidden="true">*</span> {{ config.footnote }}</p></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="leaderboard-info-panels"><div class="leaderboard-info-grid">
+                    {% for info in config.info_sections %}<article class="leaderboard-info"><h3>{{ info.title }}</h3><div class="leaderboard-info-content">{{ info.content | safe }}</div></article>{% endfor %}
+                </div></div>
+            </div>
+        </section>
+    </div>
+</div>
+<script type="application/json" id="leaderboard-data">{{ leaderboards | tojson }}</script>
+{% endblock %}

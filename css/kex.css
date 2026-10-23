@@ -1,0 +1,47 @@
+/* KEX-specific data columns; the shared SEC-bench design is in the other files. */
+:root {
+    --project-windows: #5b8def;
+}
+
+.hero-venue {
+    color: var(--ink-3);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 12px 0 0;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.score-segment-windows {
+    background: var(--project-windows);
+}
+
+.score-bar-fill,
+.score-segment {
+    min-width: 0;
+}
+
+.score-mode-tabs {
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
+    width: max-content;
+}
+
+.primitive-result {
+    display: inline-block;
+    margin: 3px 10px 3px 0;
+    white-space: nowrap;
+}
+
+.leaderboard-table th.sortable:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

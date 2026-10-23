@@ -1,0 +1,3916 @@
+{
+  "generated_at": "2026-06-08",
+  "source": "trajectories",
+  "modes": [
+    {
+      "id": "type_b",
+      "label": "with PoC",
+      "description": "reference PoC provided"
+    },
+    {
+      "id": "type_a",
+      "label": "without PoC",
+      "description": "no reference PoC"
+    }
+  ],
+  "summary": {
+    "task_instances": 45,
+    "cves": 40,
+    "primitives": 5,
+    "agent_model_pairs": 11,
+    "runs": 44,
+    "overall": {
+      "type_a": {
+        "solved": 37,
+        "total": 495,
+        "score_label": "7.5%"
+      },
+      "type_b": {
+        "solved": 113,
+        "total": 495,
+        "score_label": "22.8%"
+      }
+    },
+    "best": {
+      "type_a": {
+        "agent": "Claude Code",
+        "model": "Opus 4.6",
+        "solved": 15,
+        "total": 45,
+        "score_label": "33.3%"
+      },
+      "type_b": {
+        "agent": "Claude Code",
+        "model": "Opus 4.6",
+        "solved": 31,
+        "total": 45,
+        "score_label": "68.9%"
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "claude-code-opus-4.6",
+      "agent": "Claude Code",
+      "model": "Opus 4.6",
+      "org": "Anthropic",
+      "date": "2026-05-01",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 15,
+          "total": 45,
+          "score": 33.33333333333333,
+          "score_label": "33.3%",
+          "linux": {
+            "solved": 14,
+            "total": 25,
+            "score": 56.00000000000001,
+            "score_label": "56.0%"
+          },
+          "windows": {
+            "solved": 1,
+            "total": 20,
+            "score": 5.0,
+            "score_label": "5.0%"
+          },
+          "tokens": 726200000,
+          "tokens_label": "726.2M",
+          "runtime_minutes": 4756.0,
+          "runtime_label": "79.3h",
+          "tool_calls": 8729,
+          "tool_calls_label": "8,729",
+          "rank": 1
+        },
+        "type_b": {
+          "solved": 31,
+          "total": 45,
+          "score": 68.88888888888889,
+          "score_label": "68.9%",
+          "linux": {
+            "solved": 23,
+            "total": 25,
+            "score": 92.0,
+            "score_label": "92.0%"
+          },
+          "windows": {
+            "solved": 8,
+            "total": 20,
+            "score": 40.0,
+            "score_label": "40.0%"
+          },
+          "tokens": 516600000,
+          "tokens_label": "516.6M",
+          "runtime_minutes": 3319.6,
+          "runtime_label": "55.3h",
+          "tool_calls": 6368,
+          "tool_calls_label": "6,368",
+          "rank": 1
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-claude-code_us.anthropic.claude-opus-4-6-v1-type_a",
+          "agent": "Claude Code",
+          "model": "Opus 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-opus-4-6-v1",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260413_101018",
+          "date": "2026-04-13",
+          "path": "linux/claude-code_us.anthropic.claude-opus-4-6-v1/type_a",
+          "solved": 14,
+          "total": 25,
+          "score": 56.00000000000001,
+          "score_label": "56.0%",
+          "primitives": {
+            "leak": {
+              "solved": 6,
+              "total": 9
+            },
+            "hread": {
+              "solved": 3,
+              "total": 6
+            },
+            "rip": {
+              "solved": 3,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 274900000,
+          "tokens_label": "274.9M",
+          "runtime_minutes": 2815.5,
+          "runtime_label": "46.9h",
+          "tool_calls": 3620,
+          "tool_calls_label": "3,620"
+        },
+        {
+          "id": "windows-claude-code_claude-opus-4-6-type_a",
+          "agent": "Claude Code",
+          "model": "Opus 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_claude-opus-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260501_164503",
+          "date": "2026-05-01",
+          "path": "windows/claude-code_claude-opus-4-6/type_a",
+          "solved": 1,
+          "total": 20,
+          "score": 5.0,
+          "score_label": "5.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 1,
+              "total": 20
+            }
+          },
+          "tokens": 451300000,
+          "tokens_label": "451.3M",
+          "runtime_minutes": 1940.5,
+          "runtime_label": "32.3h",
+          "tool_calls": 5109,
+          "tool_calls_label": "5,109"
+        },
+        {
+          "id": "linux-claude-code_us.anthropic.claude-opus-4-6-v1-type_b",
+          "agent": "Claude Code",
+          "model": "Opus 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-opus-4-6-v1",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260415_101641",
+          "date": "2026-04-15",
+          "path": "linux/claude-code_us.anthropic.claude-opus-4-6-v1/type_b",
+          "solved": 23,
+          "total": 25,
+          "score": 92.0,
+          "score_label": "92.0%",
+          "primitives": {
+            "leak": {
+              "solved": 8,
+              "total": 9
+            },
+            "hread": {
+              "solved": 6,
+              "total": 6
+            },
+            "rip": {
+              "solved": 5,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 4,
+              "total": 4
+            }
+          },
+          "tokens": 113700000,
+          "tokens_label": "113.7M",
+          "runtime_minutes": 1348.0,
+          "runtime_label": "22.5h",
+          "tool_calls": 1718,
+          "tool_calls_label": "1,718"
+        },
+        {
+          "id": "windows-claude-code_claude-opus-4-6-type_b",
+          "agent": "Claude Code",
+          "model": "Opus 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_claude-opus-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260501_164503",
+          "date": "2026-05-01",
+          "path": "windows/claude-code_claude-opus-4-6/type_b",
+          "solved": 8,
+          "total": 20,
+          "score": 40.0,
+          "score_label": "40.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 8,
+              "total": 20
+            }
+          },
+          "tokens": 402900000,
+          "tokens_label": "402.9M",
+          "runtime_minutes": 1971.6,
+          "runtime_label": "32.9h",
+          "tool_calls": 4650,
+          "tool_calls_label": "4,650"
+        }
+      ]
+    },
+    {
+      "id": "claude-code-sonnet-4.6",
+      "agent": "Claude Code",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "date": "2026-05-10",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 7,
+          "total": 45,
+          "score": 15.555555555555555,
+          "score_label": "15.6%",
+          "linux": {
+            "solved": 7,
+            "total": 25,
+            "score": 28.000000000000004,
+            "score_label": "28.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 802800000,
+          "tokens_label": "802.8M",
+          "runtime_minutes": 4976.4,
+          "runtime_label": "82.9h",
+          "tool_calls": 10304,
+          "tool_calls_label": "10,304",
+          "rank": 2
+        },
+        "type_b": {
+          "solved": 24,
+          "total": 45,
+          "score": 53.333333333333336,
+          "score_label": "53.3%",
+          "linux": {
+            "solved": 19,
+            "total": 25,
+            "score": 76.0,
+            "score_label": "76.0%"
+          },
+          "windows": {
+            "solved": 5,
+            "total": 20,
+            "score": 25.0,
+            "score_label": "25.0%"
+          },
+          "tokens": 575800000,
+          "tokens_label": "575.8M",
+          "runtime_minutes": 4128.4,
+          "runtime_label": "68.8h",
+          "tool_calls": 7419,
+          "tool_calls_label": "7,419",
+          "rank": 2
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-claude-code_us.anthropic.claude-sonnet-4-6-type_a",
+          "agent": "Claude Code",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-sonnet-4-6",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260417_003434",
+          "date": "2026-04-17",
+          "path": "linux/claude-code_us.anthropic.claude-sonnet-4-6/type_a",
+          "solved": 7,
+          "total": 25,
+          "score": 28.000000000000004,
+          "score_label": "28.0%",
+          "primitives": {
+            "leak": {
+              "solved": 2,
+              "total": 9
+            },
+            "hread": {
+              "solved": 1,
+              "total": 6
+            },
+            "rip": {
+              "solved": 2,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 313900000,
+          "tokens_label": "313.9M",
+          "runtime_minutes": 3009.6,
+          "runtime_label": "50.2h",
+          "tool_calls": 4279,
+          "tool_calls_label": "4,279"
+        },
+        {
+          "id": "windows-claude-code_claude-sonnet-4-6-type_a",
+          "agent": "Claude Code",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_claude-sonnet-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260510_010506",
+          "date": "2026-05-10",
+          "path": "windows/claude-code_claude-sonnet-4-6/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 488900000,
+          "tokens_label": "488.9M",
+          "runtime_minutes": 1966.8,
+          "runtime_label": "32.8h",
+          "tool_calls": 6025,
+          "tool_calls_label": "6,025"
+        },
+        {
+          "id": "linux-claude-code_us.anthropic.claude-sonnet-4-6-type_b",
+          "agent": "Claude Code",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-sonnet-4-6",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260417_094857",
+          "date": "2026-04-17",
+          "path": "linux/claude-code_us.anthropic.claude-sonnet-4-6/type_b",
+          "solved": 19,
+          "total": 25,
+          "score": 76.0,
+          "score_label": "76.0%",
+          "primitives": {
+            "leak": {
+              "solved": 6,
+              "total": 9
+            },
+            "hread": {
+              "solved": 4,
+              "total": 6
+            },
+            "rip": {
+              "solved": 5,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 4,
+              "total": 4
+            }
+          },
+          "tokens": 176500000,
+          "tokens_label": "176.5M",
+          "runtime_minutes": 1819.4,
+          "runtime_label": "30.3h",
+          "tool_calls": 2457,
+          "tool_calls_label": "2,457"
+        },
+        {
+          "id": "windows-claude-code_claude-sonnet-4-6-type_b",
+          "agent": "Claude Code",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "claude-code_claude-sonnet-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260510_010506",
+          "date": "2026-05-10",
+          "path": "windows/claude-code_claude-sonnet-4-6/type_b",
+          "solved": 5,
+          "total": 20,
+          "score": 25.0,
+          "score_label": "25.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 5,
+              "total": 20
+            }
+          },
+          "tokens": 399300000,
+          "tokens_label": "399.3M",
+          "runtime_minutes": 2309.0,
+          "runtime_label": "38.5h",
+          "tool_calls": 4962,
+          "tool_calls_label": "4,962"
+        }
+      ]
+    },
+    {
+      "id": "codex-gpt-5.4",
+      "agent": "Codex",
+      "model": "GPT-5.4",
+      "org": "OpenAI",
+      "date": "2026-05-08",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 6,
+          "total": 45,
+          "score": 13.333333333333334,
+          "score_label": "13.3%",
+          "linux": {
+            "solved": 5,
+            "total": 25,
+            "score": 20.0,
+            "score_label": "20.0%"
+          },
+          "windows": {
+            "solved": 1,
+            "total": 20,
+            "score": 5.0,
+            "score_label": "5.0%"
+          },
+          "tokens": 550200000,
+          "tokens_label": "550.2M",
+          "runtime_minutes": 2102.7,
+          "runtime_label": "35.0h",
+          "tool_calls": 6815,
+          "tool_calls_label": "6,815",
+          "rank": 3
+        },
+        "type_b": {
+          "solved": 19,
+          "total": 45,
+          "score": 42.22222222222222,
+          "score_label": "42.2%",
+          "linux": {
+            "solved": 12,
+            "total": 25,
+            "score": 48.0,
+            "score_label": "48.0%"
+          },
+          "windows": {
+            "solved": 7,
+            "total": 20,
+            "score": 35.0,
+            "score_label": "35.0%"
+          },
+          "tokens": 411900000,
+          "tokens_label": "411.9M",
+          "runtime_minutes": 1902.3,
+          "runtime_label": "31.7h",
+          "tool_calls": 5032,
+          "tool_calls_label": "5,032",
+          "rank": 3
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-codex_gpt-5.4-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.4",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260426_132858",
+          "date": "2026-04-26",
+          "path": "linux/codex_gpt-5.4/type_a",
+          "solved": 5,
+          "total": 25,
+          "score": 20.0,
+          "score_label": "20.0%",
+          "primitives": {
+            "leak": {
+              "solved": 1,
+              "total": 9
+            },
+            "hread": {
+              "solved": 1,
+              "total": 6
+            },
+            "rip": {
+              "solved": 2,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 1,
+              "total": 4
+            }
+          },
+          "tokens": 202000000,
+          "tokens_label": "202.0M",
+          "runtime_minutes": 801.1,
+          "runtime_label": "13.4h",
+          "tool_calls": 2970,
+          "tool_calls_label": "2,970"
+        },
+        {
+          "id": "windows-codex_gpt-5.4-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.4",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260508_181610",
+          "date": "2026-05-08",
+          "path": "windows/codex_gpt-5.4/type_a",
+          "solved": 1,
+          "total": 20,
+          "score": 5.0,
+          "score_label": "5.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 1,
+              "total": 20
+            }
+          },
+          "tokens": 348200000,
+          "tokens_label": "348.2M",
+          "runtime_minutes": 1301.6,
+          "runtime_label": "21.7h",
+          "tool_calls": 3845,
+          "tool_calls_label": "3,845"
+        },
+        {
+          "id": "linux-codex_gpt-5.4-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.4",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260417_094725",
+          "date": "2026-04-17",
+          "path": "linux/codex_gpt-5.4/type_b",
+          "solved": 12,
+          "total": 25,
+          "score": 48.0,
+          "score_label": "48.0%",
+          "primitives": {
+            "leak": {
+              "solved": 4,
+              "total": 9
+            },
+            "hread": {
+              "solved": 4,
+              "total": 6
+            },
+            "rip": {
+              "solved": 2,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 123700000,
+          "tokens_label": "123.7M",
+          "runtime_minutes": 592.8,
+          "runtime_label": "9.9h",
+          "tool_calls": 1929,
+          "tool_calls_label": "1,929"
+        },
+        {
+          "id": "windows-codex_gpt-5.4-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.4",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260508_181610",
+          "date": "2026-05-08",
+          "path": "windows/codex_gpt-5.4/type_b",
+          "solved": 7,
+          "total": 20,
+          "score": 35.0,
+          "score_label": "35.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 7,
+              "total": 20
+            }
+          },
+          "tokens": 288200000,
+          "tokens_label": "288.2M",
+          "runtime_minutes": 1309.5,
+          "runtime_label": "21.8h",
+          "tool_calls": 3103,
+          "tool_calls_label": "3,103"
+        }
+      ]
+    },
+    {
+      "id": "opencode-sonnet-4.6",
+      "agent": "OpenCode",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "date": "2026-05-21",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 4,
+          "total": 45,
+          "score": 8.88888888888889,
+          "score_label": "8.9%",
+          "linux": {
+            "solved": 4,
+            "total": 25,
+            "score": 16.0,
+            "score_label": "16.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 1221500000,
+          "tokens_label": "1.2B",
+          "runtime_minutes": 2699.5,
+          "runtime_label": "45.0h",
+          "tool_calls": 8147,
+          "tool_calls_label": "8,147",
+          "rank": 5
+        },
+        "type_b": {
+          "solved": 16,
+          "total": 45,
+          "score": 35.55555555555556,
+          "score_label": "35.6%",
+          "linux": {
+            "solved": 10,
+            "total": 25,
+            "score": 40.0,
+            "score_label": "40.0%"
+          },
+          "windows": {
+            "solved": 6,
+            "total": 20,
+            "score": 30.0,
+            "score_label": "30.0%"
+          },
+          "tokens": 1064500000,
+          "tokens_label": "1.1B",
+          "runtime_minutes": 2854.8,
+          "runtime_label": "47.6h",
+          "tool_calls": 6621,
+          "tool_calls_label": "6,621",
+          "rank": 4
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-opencode_us.anthropic.claude-sonnet-4-6-type_a",
+          "agent": "OpenCode",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "opencode_us.anthropic.claude-sonnet-4-6",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260426_133742",
+          "date": "2026-04-26",
+          "path": "linux/opencode_us.anthropic.claude-sonnet-4-6/type_a",
+          "solved": 4,
+          "total": 25,
+          "score": 16.0,
+          "score_label": "16.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 4,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 628600000,
+          "tokens_label": "628.6M",
+          "runtime_minutes": 1388.5,
+          "runtime_label": "23.1h",
+          "tool_calls": 4357,
+          "tool_calls_label": "4,357"
+        },
+        {
+          "id": "windows-opencode_claude-sonnet-4-6-type_a",
+          "agent": "OpenCode",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "opencode_claude-sonnet-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260420_092353",
+          "date": "2026-04-20",
+          "path": "windows/opencode_claude-sonnet-4-6/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 592900000,
+          "tokens_label": "592.9M",
+          "runtime_minutes": 1311.0,
+          "runtime_label": "21.9h",
+          "tool_calls": 3790,
+          "tool_calls_label": "3,790"
+        },
+        {
+          "id": "linux-opencode_us.anthropic.claude-sonnet-4-6-type_b",
+          "agent": "OpenCode",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "opencode_us.anthropic.claude-sonnet-4-6",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260416_140354",
+          "date": "2026-04-16",
+          "path": "linux/opencode_us.anthropic.claude-sonnet-4-6/type_b",
+          "solved": 10,
+          "total": 25,
+          "score": 40.0,
+          "score_label": "40.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 2,
+              "total": 6
+            },
+            "rip": {
+              "solved": 6,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 449900000,
+          "tokens_label": "449.9M",
+          "runtime_minutes": 1282.6,
+          "runtime_label": "21.4h",
+          "tool_calls": 3008,
+          "tool_calls_label": "3,008"
+        },
+        {
+          "id": "windows-opencode_claude-sonnet-4-6-type_b",
+          "agent": "OpenCode",
+          "model": "Sonnet 4.6",
+          "org": "Anthropic",
+          "config": "opencode_claude-sonnet-4-6",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260521_193329",
+          "date": "2026-05-21",
+          "path": "windows/opencode_claude-sonnet-4-6/type_b",
+          "solved": 6,
+          "total": 20,
+          "score": 30.0,
+          "score_label": "30.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 6,
+              "total": 20
+            }
+          },
+          "tokens": 614600000,
+          "tokens_label": "614.6M",
+          "runtime_minutes": 1572.2,
+          "runtime_label": "26.2h",
+          "tool_calls": 3613,
+          "tool_calls_label": "3,613"
+        }
+      ]
+    },
+    {
+      "id": "codex-gpt-5.3-codex",
+      "agent": "Codex",
+      "model": "GPT-5.3-Codex",
+      "org": "OpenAI",
+      "date": "2026-05-10",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 4,
+          "total": 45,
+          "score": 8.88888888888889,
+          "score_label": "8.9%",
+          "linux": {
+            "solved": 3,
+            "total": 25,
+            "score": 12.0,
+            "score_label": "12.0%"
+          },
+          "windows": {
+            "solved": 1,
+            "total": 20,
+            "score": 5.0,
+            "score_label": "5.0%"
+          },
+          "tokens": 401700000,
+          "tokens_label": "401.7M",
+          "runtime_minutes": 1393.2,
+          "runtime_label": "23.2h",
+          "tool_calls": 4722,
+          "tool_calls_label": "4,722",
+          "rank": 4
+        },
+        "type_b": {
+          "solved": 11,
+          "total": 45,
+          "score": 24.444444444444443,
+          "score_label": "24.4%",
+          "linux": {
+            "solved": 6,
+            "total": 25,
+            "score": 24.0,
+            "score_label": "24.0%"
+          },
+          "windows": {
+            "solved": 5,
+            "total": 20,
+            "score": 25.0,
+            "score_label": "25.0%"
+          },
+          "tokens": 266500000,
+          "tokens_label": "266.5M",
+          "runtime_minutes": 1277.6,
+          "runtime_label": "21.3h",
+          "tool_calls": 3313,
+          "tool_calls_label": "3,313",
+          "rank": 5
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-codex_gpt-5.3-codex-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.3-Codex",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.3-codex",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260416_143759",
+          "date": "2026-04-16",
+          "path": "linux/codex_gpt-5.3-codex/type_a",
+          "solved": 3,
+          "total": 25,
+          "score": 12.0,
+          "score_label": "12.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 1,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 1,
+              "total": 4
+            }
+          },
+          "tokens": 76000000,
+          "tokens_label": "76.0M",
+          "runtime_minutes": 480.3,
+          "runtime_label": "8.0h",
+          "tool_calls": 1430,
+          "tool_calls_label": "1,430"
+        },
+        {
+          "id": "windows-codex_gpt-5.3-codex-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.3-Codex",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.3-codex",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260510_182544",
+          "date": "2026-05-10",
+          "path": "windows/codex_gpt-5.3-codex/type_a",
+          "solved": 1,
+          "total": 20,
+          "score": 5.0,
+          "score_label": "5.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 1,
+              "total": 20
+            }
+          },
+          "tokens": 325700000,
+          "tokens_label": "325.7M",
+          "runtime_minutes": 912.9,
+          "runtime_label": "15.2h",
+          "tool_calls": 3292,
+          "tool_calls_label": "3,292"
+        },
+        {
+          "id": "linux-codex_gpt-5.3-codex-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.3-Codex",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.3-codex",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260406_232736",
+          "date": "2026-04-06",
+          "path": "linux/codex_gpt-5.3-codex/type_b",
+          "solved": 6,
+          "total": 25,
+          "score": 24.0,
+          "score_label": "24.0%",
+          "primitives": {
+            "leak": {
+              "solved": 1,
+              "total": 9
+            },
+            "hread": {
+              "solved": 1,
+              "total": 6
+            },
+            "rip": {
+              "solved": 2,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 56700000,
+          "tokens_label": "56.7M",
+          "runtime_minutes": 419.8,
+          "runtime_label": "7.0h",
+          "tool_calls": 1094,
+          "tool_calls_label": "1,094"
+        },
+        {
+          "id": "windows-codex_gpt-5.3-codex-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.3-Codex",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.3-codex",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260510_182544",
+          "date": "2026-05-10",
+          "path": "windows/codex_gpt-5.3-codex/type_b",
+          "solved": 5,
+          "total": 20,
+          "score": 25.0,
+          "score_label": "25.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 5,
+              "total": 20
+            }
+          },
+          "tokens": 209800000,
+          "tokens_label": "209.8M",
+          "runtime_minutes": 857.8,
+          "runtime_label": "14.3h",
+          "tool_calls": 2219,
+          "tool_calls_label": "2,219"
+        }
+      ]
+    },
+    {
+      "id": "codex-gpt-5.4-mini",
+      "agent": "Codex",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "date": "2026-05-17",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 1,
+          "total": 45,
+          "score": 2.2222222222222223,
+          "score_label": "2.2%",
+          "linux": {
+            "solved": 1,
+            "total": 25,
+            "score": 4.0,
+            "score_label": "4.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 480300000,
+          "tokens_label": "480.3M",
+          "runtime_minutes": 959.2,
+          "runtime_label": "16.0h",
+          "tool_calls": 6580,
+          "tool_calls_label": "6,580",
+          "rank": 6
+        },
+        "type_b": {
+          "solved": 5,
+          "total": 45,
+          "score": 11.11111111111111,
+          "score_label": "11.1%",
+          "linux": {
+            "solved": 3,
+            "total": 25,
+            "score": 12.0,
+            "score_label": "12.0%"
+          },
+          "windows": {
+            "solved": 2,
+            "total": 20,
+            "score": 10.0,
+            "score_label": "10.0%"
+          },
+          "tokens": 258800000,
+          "tokens_label": "258.8M",
+          "runtime_minutes": 761.8,
+          "runtime_label": "12.7h",
+          "tool_calls": 3958,
+          "tool_calls_label": "3,958",
+          "rank": 6
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-codex_gpt-5.4-mini-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4-mini",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260416_000046",
+          "date": "2026-04-16",
+          "path": "linux/codex_gpt-5.4-mini/type_a",
+          "solved": 1,
+          "total": 25,
+          "score": 4.0,
+          "score_label": "4.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 226700000,
+          "tokens_label": "226.7M",
+          "runtime_minutes": 543.2,
+          "runtime_label": "9.1h",
+          "tool_calls": 3349,
+          "tool_calls_label": "3,349"
+        },
+        {
+          "id": "windows-codex_gpt-5.4-mini-type_a",
+          "agent": "Codex",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4-mini",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260517_230322",
+          "date": "2026-05-17",
+          "path": "windows/codex_gpt-5.4-mini/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 253600000,
+          "tokens_label": "253.6M",
+          "runtime_minutes": 416.0,
+          "runtime_label": "6.9h",
+          "tool_calls": 3231,
+          "tool_calls_label": "3,231"
+        },
+        {
+          "id": "linux-codex_gpt-5.4-mini-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4-mini",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260416_095811",
+          "date": "2026-04-16",
+          "path": "linux/codex_gpt-5.4-mini/type_b",
+          "solved": 3,
+          "total": 25,
+          "score": 12.0,
+          "score_label": "12.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 2,
+              "total": 4
+            }
+          },
+          "tokens": 87200000,
+          "tokens_label": "87.2M",
+          "runtime_minutes": 341.5,
+          "runtime_label": "5.7h",
+          "tool_calls": 1575,
+          "tool_calls_label": "1,575"
+        },
+        {
+          "id": "windows-codex_gpt-5.4-mini-type_b",
+          "agent": "Codex",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "codex_gpt-5.4-mini",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260517_230322",
+          "date": "2026-05-17",
+          "path": "windows/codex_gpt-5.4-mini/type_b",
+          "solved": 2,
+          "total": 20,
+          "score": 10.0,
+          "score_label": "10.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 2,
+              "total": 20
+            }
+          },
+          "tokens": 171600000,
+          "tokens_label": "171.6M",
+          "runtime_minutes": 420.3,
+          "runtime_label": "7.0h",
+          "tool_calls": 2383,
+          "tool_calls_label": "2,383"
+        }
+      ]
+    },
+    {
+      "id": "opencode-haiku-4.5",
+      "agent": "OpenCode",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "date": "2026-05-12",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 103700000,
+          "tokens_label": "103.7M",
+          "runtime_minutes": 384.1,
+          "runtime_label": "6.4h",
+          "tool_calls": 2321,
+          "tool_calls_label": "2,321",
+          "rank": 8
+        },
+        "type_b": {
+          "solved": 2,
+          "total": 45,
+          "score": 4.444444444444445,
+          "score_label": "4.4%",
+          "linux": {
+            "solved": 2,
+            "total": 25,
+            "score": 8.0,
+            "score_label": "8.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 70600000,
+          "tokens_label": "70.6M",
+          "runtime_minutes": 382.0,
+          "runtime_label": "6.4h",
+          "tool_calls": 1545,
+          "tool_calls_label": "1,545",
+          "rank": 7
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_a",
+          "agent": "OpenCode",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260426_130603",
+          "date": "2026-04-26",
+          "path": "linux/opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_a",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 48900000,
+          "tokens_label": "48.9M",
+          "runtime_minutes": 215.9,
+          "runtime_label": "3.6h",
+          "tool_calls": 1325,
+          "tool_calls_label": "1,325"
+        },
+        {
+          "id": "windows-opencode_claude-haiku-4-5-type_a",
+          "agent": "OpenCode",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "opencode_claude-haiku-4-5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260512_200932",
+          "date": "2026-05-12",
+          "path": "windows/opencode_claude-haiku-4-5/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 54800000,
+          "tokens_label": "54.8M",
+          "runtime_minutes": 168.2,
+          "runtime_label": "2.8h",
+          "tool_calls": 996,
+          "tool_calls_label": "996"
+        },
+        {
+          "id": "linux-opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_b",
+          "agent": "OpenCode",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260404_105300",
+          "date": "2026-04-04",
+          "path": "linux/opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_b",
+          "solved": 2,
+          "total": 25,
+          "score": 8.0,
+          "score_label": "8.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 1,
+              "total": 4
+            }
+          },
+          "tokens": 41800000,
+          "tokens_label": "41.8M",
+          "runtime_minutes": 223.2,
+          "runtime_label": "3.7h",
+          "tool_calls": 875,
+          "tool_calls_label": "875"
+        },
+        {
+          "id": "windows-opencode_claude-haiku-4-5-type_b",
+          "agent": "OpenCode",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "opencode_claude-haiku-4-5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260512_200932",
+          "date": "2026-05-12",
+          "path": "windows/opencode_claude-haiku-4-5/type_b",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 28800000,
+          "tokens_label": "28.8M",
+          "runtime_minutes": 158.8,
+          "runtime_label": "2.6h",
+          "tool_calls": 670,
+          "tool_calls_label": "670"
+        }
+      ]
+    },
+    {
+      "id": "opencode-gpt-5.4-mini",
+      "agent": "OpenCode",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "date": "2026-05-12",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 187100000,
+          "tokens_label": "187.1M",
+          "runtime_minutes": 609.1,
+          "runtime_label": "10.2h",
+          "tool_calls": 2925,
+          "tool_calls_label": "2,925",
+          "rank": 9
+        },
+        "type_b": {
+          "solved": 2,
+          "total": 45,
+          "score": 4.444444444444445,
+          "score_label": "4.4%",
+          "linux": {
+            "solved": 2,
+            "total": 25,
+            "score": 8.0,
+            "score_label": "8.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 91900000,
+          "tokens_label": "91.9M",
+          "runtime_minutes": 430.0,
+          "runtime_label": "7.2h",
+          "tool_calls": 1892,
+          "tool_calls_label": "1,892",
+          "rank": 8
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-opencode_gpt-5.4-mini-type_a",
+          "agent": "OpenCode",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "opencode_gpt-5.4-mini",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260426_122835",
+          "date": "2026-04-26",
+          "path": "linux/opencode_gpt-5.4-mini/type_a",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 177700000,
+          "tokens_label": "177.7M",
+          "runtime_minutes": 527.2,
+          "runtime_label": "8.8h",
+          "tool_calls": 2559,
+          "tool_calls_label": "2,559"
+        },
+        {
+          "id": "windows-opencode_gpt-5.4-mini-type_a",
+          "agent": "OpenCode",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "opencode_gpt-5.4-mini",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260512_121824",
+          "date": "2026-05-12",
+          "path": "windows/opencode_gpt-5.4-mini/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 9400000,
+          "tokens_label": "9.4M",
+          "runtime_minutes": 81.9,
+          "runtime_label": "1.4h",
+          "tool_calls": 366,
+          "tool_calls_label": "366"
+        },
+        {
+          "id": "linux-opencode_gpt-5.4-mini-type_b",
+          "agent": "OpenCode",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "opencode_gpt-5.4-mini",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260426_122835",
+          "date": "2026-04-26",
+          "path": "linux/opencode_gpt-5.4-mini/type_b",
+          "solved": 2,
+          "total": 25,
+          "score": 8.0,
+          "score_label": "8.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 2,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 84200000,
+          "tokens_label": "84.2M",
+          "runtime_minutes": 344.2,
+          "runtime_label": "5.7h",
+          "tool_calls": 1557,
+          "tool_calls_label": "1,557"
+        },
+        {
+          "id": "windows-opencode_gpt-5.4-mini-type_b",
+          "agent": "OpenCode",
+          "model": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "config": "opencode_gpt-5.4-mini",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260512_121824",
+          "date": "2026-05-12",
+          "path": "windows/opencode_gpt-5.4-mini/type_b",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 7700000,
+          "tokens_label": "7.7M",
+          "runtime_minutes": 85.8,
+          "runtime_label": "1.4h",
+          "tool_calls": 335,
+          "tool_calls_label": "335"
+        }
+      ]
+    },
+    {
+      "id": "opencode-kimi-k2.5",
+      "agent": "OpenCode",
+      "model": "Kimi K2.5",
+      "org": "Moonshot AI",
+      "date": "2026-05-12",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 193400000,
+          "tokens_label": "193.4M",
+          "runtime_minutes": 1383.6,
+          "runtime_label": "23.1h",
+          "tool_calls": 3586,
+          "tool_calls_label": "3,586",
+          "rank": 10
+        },
+        "type_b": {
+          "solved": 2,
+          "total": 45,
+          "score": 4.444444444444445,
+          "score_label": "4.4%",
+          "linux": {
+            "solved": 2,
+            "total": 25,
+            "score": 8.0,
+            "score_label": "8.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 133970000,
+          "tokens_label": "134.0M",
+          "runtime_minutes": 1207.1,
+          "runtime_label": "20.1h",
+          "tool_calls": 2674,
+          "tool_calls_label": "2,674",
+          "rank": 9
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-opencode_kimi-k2.5-type_a",
+          "agent": "OpenCode",
+          "model": "Kimi K2.5",
+          "org": "Moonshot AI",
+          "config": "opencode_kimi-k2.5",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260402_002250",
+          "date": "2026-04-02",
+          "path": "linux/opencode_kimi-k2.5/type_a",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 133400000,
+          "tokens_label": "133.4M",
+          "runtime_minutes": 933.0,
+          "runtime_label": "15.6h",
+          "tool_calls": 2368,
+          "tool_calls_label": "2,368"
+        },
+        {
+          "id": "windows-opencode_kimi-k2.5-type_a",
+          "agent": "OpenCode",
+          "model": "Kimi K2.5",
+          "org": "Moonshot AI",
+          "config": "opencode_kimi-k2.5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260512_125711",
+          "date": "2026-05-12",
+          "path": "windows/opencode_kimi-k2.5/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 60000000,
+          "tokens_label": "60.0M",
+          "runtime_minutes": 450.6,
+          "runtime_label": "7.5h",
+          "tool_calls": 1218,
+          "tool_calls_label": "1,218"
+        },
+        {
+          "id": "linux-opencode_kimi-k2.5-type_b",
+          "agent": "OpenCode",
+          "model": "Kimi K2.5",
+          "org": "Moonshot AI",
+          "config": "opencode_kimi-k2.5",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260402_220906",
+          "date": "2026-04-02",
+          "path": "linux/opencode_kimi-k2.5/type_b",
+          "solved": 2,
+          "total": 25,
+          "score": 8.0,
+          "score_label": "8.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 1,
+              "total": 4
+            }
+          },
+          "tokens": 90900000,
+          "tokens_label": "90.9M",
+          "runtime_minutes": 781.9,
+          "runtime_label": "13.0h",
+          "tool_calls": 1614,
+          "tool_calls_label": "1,614"
+        },
+        {
+          "id": "windows-opencode_kimi-k2.5-type_b",
+          "agent": "OpenCode",
+          "model": "Kimi K2.5",
+          "org": "Moonshot AI",
+          "config": "opencode_kimi-k2.5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260512_125711",
+          "date": "2026-05-12",
+          "path": "windows/opencode_kimi-k2.5/type_b",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 43070000,
+          "tokens_label": "43.1M",
+          "runtime_minutes": 425.2,
+          "runtime_label": "7.1h",
+          "tool_calls": 1060,
+          "tool_calls_label": "1,060"
+        }
+      ]
+    },
+    {
+      "id": "opencode-gemma-4-31b",
+      "agent": "OpenCode",
+      "model": "Gemma 4 31B",
+      "org": "Google",
+      "date": "2026-05-10",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 49300000,
+          "tokens_label": "49.3M",
+          "runtime_minutes": 843.8,
+          "runtime_label": "14.1h",
+          "tool_calls": 1513,
+          "tool_calls_label": "1,513",
+          "rank": 11
+        },
+        "type_b": {
+          "solved": 1,
+          "total": 45,
+          "score": 2.2222222222222223,
+          "score_label": "2.2%",
+          "linux": {
+            "solved": 1,
+            "total": 25,
+            "score": 4.0,
+            "score_label": "4.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 27270000,
+          "tokens_label": "27.3M",
+          "runtime_minutes": 1803.6,
+          "runtime_label": "30.1h",
+          "tool_calls": 874,
+          "tool_calls_label": "874",
+          "rank": 10
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-opencode_google-gemma-4-31b-it-type_a",
+          "agent": "OpenCode",
+          "model": "Gemma 4 31B",
+          "org": "Google",
+          "config": "opencode_google-gemma-4-31b-it",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260421_164137",
+          "date": "2026-04-21",
+          "path": "linux/opencode_google-gemma-4-31b-it/type_a",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 16800000,
+          "tokens_label": "16.8M",
+          "runtime_minutes": 287.3,
+          "runtime_label": "4.8h",
+          "tool_calls": 736,
+          "tool_calls_label": "736"
+        },
+        {
+          "id": "windows-opencode_google-gemma-4-31b-it-type_a",
+          "agent": "OpenCode",
+          "model": "Gemma 4 31B",
+          "org": "Google",
+          "config": "opencode_google-gemma-4-31b-it",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260510_192757",
+          "date": "2026-05-10",
+          "path": "windows/opencode_google-gemma-4-31b-it/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 32500000,
+          "tokens_label": "32.5M",
+          "runtime_minutes": 556.5,
+          "runtime_label": "9.3h",
+          "tool_calls": 777,
+          "tool_calls_label": "777"
+        },
+        {
+          "id": "linux-opencode_google-gemma-4-31b-it-type_b",
+          "agent": "OpenCode",
+          "model": "Gemma 4 31B",
+          "org": "Google",
+          "config": "opencode_google-gemma-4-31b-it",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260421_164137",
+          "date": "2026-04-21",
+          "path": "linux/opencode_google-gemma-4-31b-it/type_b",
+          "solved": 1,
+          "total": 25,
+          "score": 4.0,
+          "score_label": "4.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 1,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 14370000,
+          "tokens_label": "14.4M",
+          "runtime_minutes": 673.6,
+          "runtime_label": "11.2h",
+          "tool_calls": 445,
+          "tool_calls_label": "445"
+        },
+        {
+          "id": "windows-opencode_google-gemma-4-31b-it-type_b",
+          "agent": "OpenCode",
+          "model": "Gemma 4 31B",
+          "org": "Google",
+          "config": "opencode_google-gemma-4-31b-it",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260510_192757",
+          "date": "2026-05-10",
+          "path": "windows/opencode_google-gemma-4-31b-it/type_b",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 12900000,
+          "tokens_label": "12.9M",
+          "runtime_minutes": 1130.0,
+          "runtime_label": "18.8h",
+          "tool_calls": 429,
+          "tool_calls_label": "429"
+        }
+      ]
+    },
+    {
+      "id": "claude-code-haiku-4.5",
+      "agent": "Claude Code",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "date": "2026-05-14",
+      "status": "scored",
+      "highlight": false,
+      "modes": {
+        "type_a": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 131500000,
+          "tokens_label": "131.5M",
+          "runtime_minutes": 560.1,
+          "runtime_label": "9.3h",
+          "tool_calls": 2617,
+          "tool_calls_label": "2,617",
+          "rank": 7
+        },
+        "type_b": {
+          "solved": 0,
+          "total": 45,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "linux": {
+            "solved": 0,
+            "total": 25,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "windows": {
+            "solved": 0,
+            "total": 20,
+            "score": 0.0,
+            "score_label": "0.0%"
+          },
+          "tokens": 99300000,
+          "tokens_label": "99.3M",
+          "runtime_minutes": 687.5999999999999,
+          "runtime_label": "11.5h",
+          "tool_calls": 1890,
+          "tool_calls_label": "1,890",
+          "rank": 11
+        }
+      },
+      "runs": [
+        {
+          "id": "linux-claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_a",
+          "agent": "Claude Code",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260426_132009",
+          "date": "2026-04-26",
+          "path": "linux/claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_a",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 54700000,
+          "tokens_label": "54.7M",
+          "runtime_minutes": 258.5,
+          "runtime_label": "4.3h",
+          "tool_calls": 1426,
+          "tool_calls_label": "1,426"
+        },
+        {
+          "id": "windows-claude-code_claude-haiku-4-5-type_a",
+          "agent": "Claude Code",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "claude-code_claude-haiku-4-5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_a",
+          "setting": "without PoC",
+          "timestamp": "20260514_180010",
+          "date": "2026-05-14",
+          "path": "windows/claude-code_claude-haiku-4-5/type_a",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 76800000,
+          "tokens_label": "76.8M",
+          "runtime_minutes": 301.6,
+          "runtime_label": "5.0h",
+          "tool_calls": 1191,
+          "tool_calls_label": "1,191"
+        },
+        {
+          "id": "linux-claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_b",
+          "agent": "Claude Code",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+          "platform": "linux",
+          "platform_label": "Linux",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260426_134629",
+          "date": "2026-04-26",
+          "path": "linux/claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_b",
+          "solved": 0,
+          "total": 25,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "leak": {
+              "solved": 0,
+              "total": 9
+            },
+            "hread": {
+              "solved": 0,
+              "total": 6
+            },
+            "rip": {
+              "solved": 0,
+              "total": 6
+            },
+            "hwrite": {
+              "solved": 0,
+              "total": 4
+            }
+          },
+          "tokens": 39600000,
+          "tokens_label": "39.6M",
+          "runtime_minutes": 221.2,
+          "runtime_label": "3.7h",
+          "tool_calls": 855,
+          "tool_calls_label": "855"
+        },
+        {
+          "id": "windows-claude-code_claude-haiku-4-5-type_b",
+          "agent": "Claude Code",
+          "model": "Haiku 4.5",
+          "org": "Anthropic",
+          "config": "claude-code_claude-haiku-4-5",
+          "platform": "windows",
+          "platform_label": "Windows",
+          "type": "type_b",
+          "setting": "with PoC",
+          "timestamp": "20260514_180010",
+          "date": "2026-05-14",
+          "path": "windows/claude-code_claude-haiku-4-5/type_b",
+          "solved": 0,
+          "total": 20,
+          "score": 0.0,
+          "score_label": "0.0%",
+          "primitives": {
+            "aaw": {
+              "solved": 0,
+              "total": 20
+            }
+          },
+          "tokens": 59700000,
+          "tokens_label": "59.7M",
+          "runtime_minutes": 466.4,
+          "runtime_label": "7.8h",
+          "tool_calls": 1035,
+          "tool_calls_label": "1,035"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "linux-claude-code_us.anthropic.claude-opus-4-6-v1-type_a",
+      "agent": "Claude Code",
+      "model": "Opus 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-opus-4-6-v1",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260413_101018",
+      "date": "2026-04-13",
+      "path": "linux/claude-code_us.anthropic.claude-opus-4-6-v1/type_a",
+      "solved": 14,
+      "total": 25,
+      "score": 56.00000000000001,
+      "score_label": "56.0%",
+      "primitives": {
+        "leak": {
+          "solved": 6,
+          "total": 9
+        },
+        "hread": {
+          "solved": 3,
+          "total": 6
+        },
+        "rip": {
+          "solved": 3,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 274900000,
+      "tokens_label": "274.9M",
+      "runtime_minutes": 2815.5,
+      "runtime_label": "46.9h",
+      "tool_calls": 3620,
+      "tool_calls_label": "3,620"
+    },
+    {
+      "id": "windows-claude-code_claude-opus-4-6-type_a",
+      "agent": "Claude Code",
+      "model": "Opus 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_claude-opus-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260501_164503",
+      "date": "2026-05-01",
+      "path": "windows/claude-code_claude-opus-4-6/type_a",
+      "solved": 1,
+      "total": 20,
+      "score": 5.0,
+      "score_label": "5.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 1,
+          "total": 20
+        }
+      },
+      "tokens": 451300000,
+      "tokens_label": "451.3M",
+      "runtime_minutes": 1940.5,
+      "runtime_label": "32.3h",
+      "tool_calls": 5109,
+      "tool_calls_label": "5,109"
+    },
+    {
+      "id": "linux-claude-code_us.anthropic.claude-opus-4-6-v1-type_b",
+      "agent": "Claude Code",
+      "model": "Opus 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-opus-4-6-v1",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260415_101641",
+      "date": "2026-04-15",
+      "path": "linux/claude-code_us.anthropic.claude-opus-4-6-v1/type_b",
+      "solved": 23,
+      "total": 25,
+      "score": 92.0,
+      "score_label": "92.0%",
+      "primitives": {
+        "leak": {
+          "solved": 8,
+          "total": 9
+        },
+        "hread": {
+          "solved": 6,
+          "total": 6
+        },
+        "rip": {
+          "solved": 5,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 4,
+          "total": 4
+        }
+      },
+      "tokens": 113700000,
+      "tokens_label": "113.7M",
+      "runtime_minutes": 1348.0,
+      "runtime_label": "22.5h",
+      "tool_calls": 1718,
+      "tool_calls_label": "1,718"
+    },
+    {
+      "id": "windows-claude-code_claude-opus-4-6-type_b",
+      "agent": "Claude Code",
+      "model": "Opus 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_claude-opus-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260501_164503",
+      "date": "2026-05-01",
+      "path": "windows/claude-code_claude-opus-4-6/type_b",
+      "solved": 8,
+      "total": 20,
+      "score": 40.0,
+      "score_label": "40.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 8,
+          "total": 20
+        }
+      },
+      "tokens": 402900000,
+      "tokens_label": "402.9M",
+      "runtime_minutes": 1971.6,
+      "runtime_label": "32.9h",
+      "tool_calls": 4650,
+      "tool_calls_label": "4,650"
+    },
+    {
+      "id": "linux-claude-code_us.anthropic.claude-sonnet-4-6-type_a",
+      "agent": "Claude Code",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-sonnet-4-6",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260417_003434",
+      "date": "2026-04-17",
+      "path": "linux/claude-code_us.anthropic.claude-sonnet-4-6/type_a",
+      "solved": 7,
+      "total": 25,
+      "score": 28.000000000000004,
+      "score_label": "28.0%",
+      "primitives": {
+        "leak": {
+          "solved": 2,
+          "total": 9
+        },
+        "hread": {
+          "solved": 1,
+          "total": 6
+        },
+        "rip": {
+          "solved": 2,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 313900000,
+      "tokens_label": "313.9M",
+      "runtime_minutes": 3009.6,
+      "runtime_label": "50.2h",
+      "tool_calls": 4279,
+      "tool_calls_label": "4,279"
+    },
+    {
+      "id": "windows-claude-code_claude-sonnet-4-6-type_a",
+      "agent": "Claude Code",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_claude-sonnet-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260510_010506",
+      "date": "2026-05-10",
+      "path": "windows/claude-code_claude-sonnet-4-6/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 488900000,
+      "tokens_label": "488.9M",
+      "runtime_minutes": 1966.8,
+      "runtime_label": "32.8h",
+      "tool_calls": 6025,
+      "tool_calls_label": "6,025"
+    },
+    {
+      "id": "linux-claude-code_us.anthropic.claude-sonnet-4-6-type_b",
+      "agent": "Claude Code",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-sonnet-4-6",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260417_094857",
+      "date": "2026-04-17",
+      "path": "linux/claude-code_us.anthropic.claude-sonnet-4-6/type_b",
+      "solved": 19,
+      "total": 25,
+      "score": 76.0,
+      "score_label": "76.0%",
+      "primitives": {
+        "leak": {
+          "solved": 6,
+          "total": 9
+        },
+        "hread": {
+          "solved": 4,
+          "total": 6
+        },
+        "rip": {
+          "solved": 5,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 4,
+          "total": 4
+        }
+      },
+      "tokens": 176500000,
+      "tokens_label": "176.5M",
+      "runtime_minutes": 1819.4,
+      "runtime_label": "30.3h",
+      "tool_calls": 2457,
+      "tool_calls_label": "2,457"
+    },
+    {
+      "id": "windows-claude-code_claude-sonnet-4-6-type_b",
+      "agent": "Claude Code",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "claude-code_claude-sonnet-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260510_010506",
+      "date": "2026-05-10",
+      "path": "windows/claude-code_claude-sonnet-4-6/type_b",
+      "solved": 5,
+      "total": 20,
+      "score": 25.0,
+      "score_label": "25.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 5,
+          "total": 20
+        }
+      },
+      "tokens": 399300000,
+      "tokens_label": "399.3M",
+      "runtime_minutes": 2309.0,
+      "runtime_label": "38.5h",
+      "tool_calls": 4962,
+      "tool_calls_label": "4,962"
+    },
+    {
+      "id": "linux-claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_a",
+      "agent": "Claude Code",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260426_132009",
+      "date": "2026-04-26",
+      "path": "linux/claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_a",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 54700000,
+      "tokens_label": "54.7M",
+      "runtime_minutes": 258.5,
+      "runtime_label": "4.3h",
+      "tool_calls": 1426,
+      "tool_calls_label": "1,426"
+    },
+    {
+      "id": "windows-claude-code_claude-haiku-4-5-type_a",
+      "agent": "Claude Code",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "claude-code_claude-haiku-4-5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260514_180010",
+      "date": "2026-05-14",
+      "path": "windows/claude-code_claude-haiku-4-5/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 76800000,
+      "tokens_label": "76.8M",
+      "runtime_minutes": 301.6,
+      "runtime_label": "5.0h",
+      "tool_calls": 1191,
+      "tool_calls_label": "1,191"
+    },
+    {
+      "id": "linux-claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_b",
+      "agent": "Claude Code",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260426_134629",
+      "date": "2026-04-26",
+      "path": "linux/claude-code_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_b",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 39600000,
+      "tokens_label": "39.6M",
+      "runtime_minutes": 221.2,
+      "runtime_label": "3.7h",
+      "tool_calls": 855,
+      "tool_calls_label": "855"
+    },
+    {
+      "id": "windows-claude-code_claude-haiku-4-5-type_b",
+      "agent": "Claude Code",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "claude-code_claude-haiku-4-5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260514_180010",
+      "date": "2026-05-14",
+      "path": "windows/claude-code_claude-haiku-4-5/type_b",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 59700000,
+      "tokens_label": "59.7M",
+      "runtime_minutes": 466.4,
+      "runtime_label": "7.8h",
+      "tool_calls": 1035,
+      "tool_calls_label": "1,035"
+    },
+    {
+      "id": "linux-codex_gpt-5.4-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.4",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260426_132858",
+      "date": "2026-04-26",
+      "path": "linux/codex_gpt-5.4/type_a",
+      "solved": 5,
+      "total": 25,
+      "score": 20.0,
+      "score_label": "20.0%",
+      "primitives": {
+        "leak": {
+          "solved": 1,
+          "total": 9
+        },
+        "hread": {
+          "solved": 1,
+          "total": 6
+        },
+        "rip": {
+          "solved": 2,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 1,
+          "total": 4
+        }
+      },
+      "tokens": 202000000,
+      "tokens_label": "202.0M",
+      "runtime_minutes": 801.1,
+      "runtime_label": "13.4h",
+      "tool_calls": 2970,
+      "tool_calls_label": "2,970"
+    },
+    {
+      "id": "windows-codex_gpt-5.4-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.4",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260508_181610",
+      "date": "2026-05-08",
+      "path": "windows/codex_gpt-5.4/type_a",
+      "solved": 1,
+      "total": 20,
+      "score": 5.0,
+      "score_label": "5.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 1,
+          "total": 20
+        }
+      },
+      "tokens": 348200000,
+      "tokens_label": "348.2M",
+      "runtime_minutes": 1301.6,
+      "runtime_label": "21.7h",
+      "tool_calls": 3845,
+      "tool_calls_label": "3,845"
+    },
+    {
+      "id": "linux-codex_gpt-5.4-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.4",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260417_094725",
+      "date": "2026-04-17",
+      "path": "linux/codex_gpt-5.4/type_b",
+      "solved": 12,
+      "total": 25,
+      "score": 48.0,
+      "score_label": "48.0%",
+      "primitives": {
+        "leak": {
+          "solved": 4,
+          "total": 9
+        },
+        "hread": {
+          "solved": 4,
+          "total": 6
+        },
+        "rip": {
+          "solved": 2,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 123700000,
+      "tokens_label": "123.7M",
+      "runtime_minutes": 592.8,
+      "runtime_label": "9.9h",
+      "tool_calls": 1929,
+      "tool_calls_label": "1,929"
+    },
+    {
+      "id": "windows-codex_gpt-5.4-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.4",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260508_181610",
+      "date": "2026-05-08",
+      "path": "windows/codex_gpt-5.4/type_b",
+      "solved": 7,
+      "total": 20,
+      "score": 35.0,
+      "score_label": "35.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 7,
+          "total": 20
+        }
+      },
+      "tokens": 288200000,
+      "tokens_label": "288.2M",
+      "runtime_minutes": 1309.5,
+      "runtime_label": "21.8h",
+      "tool_calls": 3103,
+      "tool_calls_label": "3,103"
+    },
+    {
+      "id": "linux-codex_gpt-5.4-mini-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4-mini",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260416_000046",
+      "date": "2026-04-16",
+      "path": "linux/codex_gpt-5.4-mini/type_a",
+      "solved": 1,
+      "total": 25,
+      "score": 4.0,
+      "score_label": "4.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 226700000,
+      "tokens_label": "226.7M",
+      "runtime_minutes": 543.2,
+      "runtime_label": "9.1h",
+      "tool_calls": 3349,
+      "tool_calls_label": "3,349"
+    },
+    {
+      "id": "windows-codex_gpt-5.4-mini-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4-mini",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260517_230322",
+      "date": "2026-05-17",
+      "path": "windows/codex_gpt-5.4-mini/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 253600000,
+      "tokens_label": "253.6M",
+      "runtime_minutes": 416.0,
+      "runtime_label": "6.9h",
+      "tool_calls": 3231,
+      "tool_calls_label": "3,231"
+    },
+    {
+      "id": "linux-codex_gpt-5.4-mini-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4-mini",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260416_095811",
+      "date": "2026-04-16",
+      "path": "linux/codex_gpt-5.4-mini/type_b",
+      "solved": 3,
+      "total": 25,
+      "score": 12.0,
+      "score_label": "12.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 87200000,
+      "tokens_label": "87.2M",
+      "runtime_minutes": 341.5,
+      "runtime_label": "5.7h",
+      "tool_calls": 1575,
+      "tool_calls_label": "1,575"
+    },
+    {
+      "id": "windows-codex_gpt-5.4-mini-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.4-mini",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260517_230322",
+      "date": "2026-05-17",
+      "path": "windows/codex_gpt-5.4-mini/type_b",
+      "solved": 2,
+      "total": 20,
+      "score": 10.0,
+      "score_label": "10.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 2,
+          "total": 20
+        }
+      },
+      "tokens": 171600000,
+      "tokens_label": "171.6M",
+      "runtime_minutes": 420.3,
+      "runtime_label": "7.0h",
+      "tool_calls": 2383,
+      "tool_calls_label": "2,383"
+    },
+    {
+      "id": "linux-codex_gpt-5.3-codex-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.3-Codex",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.3-codex",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260416_143759",
+      "date": "2026-04-16",
+      "path": "linux/codex_gpt-5.3-codex/type_a",
+      "solved": 3,
+      "total": 25,
+      "score": 12.0,
+      "score_label": "12.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 1,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 1,
+          "total": 4
+        }
+      },
+      "tokens": 76000000,
+      "tokens_label": "76.0M",
+      "runtime_minutes": 480.3,
+      "runtime_label": "8.0h",
+      "tool_calls": 1430,
+      "tool_calls_label": "1,430"
+    },
+    {
+      "id": "windows-codex_gpt-5.3-codex-type_a",
+      "agent": "Codex",
+      "model": "GPT-5.3-Codex",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.3-codex",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260510_182544",
+      "date": "2026-05-10",
+      "path": "windows/codex_gpt-5.3-codex/type_a",
+      "solved": 1,
+      "total": 20,
+      "score": 5.0,
+      "score_label": "5.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 1,
+          "total": 20
+        }
+      },
+      "tokens": 325700000,
+      "tokens_label": "325.7M",
+      "runtime_minutes": 912.9,
+      "runtime_label": "15.2h",
+      "tool_calls": 3292,
+      "tool_calls_label": "3,292"
+    },
+    {
+      "id": "linux-codex_gpt-5.3-codex-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.3-Codex",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.3-codex",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260406_232736",
+      "date": "2026-04-06",
+      "path": "linux/codex_gpt-5.3-codex/type_b",
+      "solved": 6,
+      "total": 25,
+      "score": 24.0,
+      "score_label": "24.0%",
+      "primitives": {
+        "leak": {
+          "solved": 1,
+          "total": 9
+        },
+        "hread": {
+          "solved": 1,
+          "total": 6
+        },
+        "rip": {
+          "solved": 2,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 56700000,
+      "tokens_label": "56.7M",
+      "runtime_minutes": 419.8,
+      "runtime_label": "7.0h",
+      "tool_calls": 1094,
+      "tool_calls_label": "1,094"
+    },
+    {
+      "id": "windows-codex_gpt-5.3-codex-type_b",
+      "agent": "Codex",
+      "model": "GPT-5.3-Codex",
+      "org": "OpenAI",
+      "config": "codex_gpt-5.3-codex",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260510_182544",
+      "date": "2026-05-10",
+      "path": "windows/codex_gpt-5.3-codex/type_b",
+      "solved": 5,
+      "total": 20,
+      "score": 25.0,
+      "score_label": "25.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 5,
+          "total": 20
+        }
+      },
+      "tokens": 209800000,
+      "tokens_label": "209.8M",
+      "runtime_minutes": 857.8,
+      "runtime_label": "14.3h",
+      "tool_calls": 2219,
+      "tool_calls_label": "2,219"
+    },
+    {
+      "id": "linux-opencode_us.anthropic.claude-sonnet-4-6-type_a",
+      "agent": "OpenCode",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "opencode_us.anthropic.claude-sonnet-4-6",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260426_133742",
+      "date": "2026-04-26",
+      "path": "linux/opencode_us.anthropic.claude-sonnet-4-6/type_a",
+      "solved": 4,
+      "total": 25,
+      "score": 16.0,
+      "score_label": "16.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 4,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 628600000,
+      "tokens_label": "628.6M",
+      "runtime_minutes": 1388.5,
+      "runtime_label": "23.1h",
+      "tool_calls": 4357,
+      "tool_calls_label": "4,357"
+    },
+    {
+      "id": "windows-opencode_claude-sonnet-4-6-type_a",
+      "agent": "OpenCode",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "opencode_claude-sonnet-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260420_092353",
+      "date": "2026-04-20",
+      "path": "windows/opencode_claude-sonnet-4-6/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 592900000,
+      "tokens_label": "592.9M",
+      "runtime_minutes": 1311.0,
+      "runtime_label": "21.9h",
+      "tool_calls": 3790,
+      "tool_calls_label": "3,790"
+    },
+    {
+      "id": "linux-opencode_us.anthropic.claude-sonnet-4-6-type_b",
+      "agent": "OpenCode",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "opencode_us.anthropic.claude-sonnet-4-6",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260416_140354",
+      "date": "2026-04-16",
+      "path": "linux/opencode_us.anthropic.claude-sonnet-4-6/type_b",
+      "solved": 10,
+      "total": 25,
+      "score": 40.0,
+      "score_label": "40.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 2,
+          "total": 6
+        },
+        "rip": {
+          "solved": 6,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 2,
+          "total": 4
+        }
+      },
+      "tokens": 449900000,
+      "tokens_label": "449.9M",
+      "runtime_minutes": 1282.6,
+      "runtime_label": "21.4h",
+      "tool_calls": 3008,
+      "tool_calls_label": "3,008"
+    },
+    {
+      "id": "windows-opencode_claude-sonnet-4-6-type_b",
+      "agent": "OpenCode",
+      "model": "Sonnet 4.6",
+      "org": "Anthropic",
+      "config": "opencode_claude-sonnet-4-6",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260521_193329",
+      "date": "2026-05-21",
+      "path": "windows/opencode_claude-sonnet-4-6/type_b",
+      "solved": 6,
+      "total": 20,
+      "score": 30.0,
+      "score_label": "30.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 6,
+          "total": 20
+        }
+      },
+      "tokens": 614600000,
+      "tokens_label": "614.6M",
+      "runtime_minutes": 1572.2,
+      "runtime_label": "26.2h",
+      "tool_calls": 3613,
+      "tool_calls_label": "3,613"
+    },
+    {
+      "id": "linux-opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_a",
+      "agent": "OpenCode",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260426_130603",
+      "date": "2026-04-26",
+      "path": "linux/opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_a",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 48900000,
+      "tokens_label": "48.9M",
+      "runtime_minutes": 215.9,
+      "runtime_label": "3.6h",
+      "tool_calls": 1325,
+      "tool_calls_label": "1,325"
+    },
+    {
+      "id": "windows-opencode_claude-haiku-4-5-type_a",
+      "agent": "OpenCode",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "opencode_claude-haiku-4-5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260512_200932",
+      "date": "2026-05-12",
+      "path": "windows/opencode_claude-haiku-4-5/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 54800000,
+      "tokens_label": "54.8M",
+      "runtime_minutes": 168.2,
+      "runtime_label": "2.8h",
+      "tool_calls": 996,
+      "tool_calls_label": "996"
+    },
+    {
+      "id": "linux-opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0-type_b",
+      "agent": "OpenCode",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260404_105300",
+      "date": "2026-04-04",
+      "path": "linux/opencode_us.anthropic.claude-haiku-4-5-20251001-v1-0/type_b",
+      "solved": 2,
+      "total": 25,
+      "score": 8.0,
+      "score_label": "8.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 1,
+          "total": 4
+        }
+      },
+      "tokens": 41800000,
+      "tokens_label": "41.8M",
+      "runtime_minutes": 223.2,
+      "runtime_label": "3.7h",
+      "tool_calls": 875,
+      "tool_calls_label": "875"
+    },
+    {
+      "id": "windows-opencode_claude-haiku-4-5-type_b",
+      "agent": "OpenCode",
+      "model": "Haiku 4.5",
+      "org": "Anthropic",
+      "config": "opencode_claude-haiku-4-5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260512_200932",
+      "date": "2026-05-12",
+      "path": "windows/opencode_claude-haiku-4-5/type_b",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 28800000,
+      "tokens_label": "28.8M",
+      "runtime_minutes": 158.8,
+      "runtime_label": "2.6h",
+      "tool_calls": 670,
+      "tool_calls_label": "670"
+    },
+    {
+      "id": "linux-opencode_gpt-5.4-mini-type_a",
+      "agent": "OpenCode",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "opencode_gpt-5.4-mini",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260426_122835",
+      "date": "2026-04-26",
+      "path": "linux/opencode_gpt-5.4-mini/type_a",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 177700000,
+      "tokens_label": "177.7M",
+      "runtime_minutes": 527.2,
+      "runtime_label": "8.8h",
+      "tool_calls": 2559,
+      "tool_calls_label": "2,559"
+    },
+    {
+      "id": "windows-opencode_gpt-5.4-mini-type_a",
+      "agent": "OpenCode",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "opencode_gpt-5.4-mini",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260512_121824",
+      "date": "2026-05-12",
+      "path": "windows/opencode_gpt-5.4-mini/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 9400000,
+      "tokens_label": "9.4M",
+      "runtime_minutes": 81.9,
+      "runtime_label": "1.4h",
+      "tool_calls": 366,
+      "tool_calls_label": "366"
+    },
+    {
+      "id": "linux-opencode_gpt-5.4-mini-type_b",
+      "agent": "OpenCode",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "opencode_gpt-5.4-mini",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260426_122835",
+      "date": "2026-04-26",
+      "path": "linux/opencode_gpt-5.4-mini/type_b",
+      "solved": 2,
+      "total": 25,
+      "score": 8.0,
+      "score_label": "8.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 2,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 84200000,
+      "tokens_label": "84.2M",
+      "runtime_minutes": 344.2,
+      "runtime_label": "5.7h",
+      "tool_calls": 1557,
+      "tool_calls_label": "1,557"
+    },
+    {
+      "id": "windows-opencode_gpt-5.4-mini-type_b",
+      "agent": "OpenCode",
+      "model": "GPT-5.4 Mini",
+      "org": "OpenAI",
+      "config": "opencode_gpt-5.4-mini",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260512_121824",
+      "date": "2026-05-12",
+      "path": "windows/opencode_gpt-5.4-mini/type_b",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 7700000,
+      "tokens_label": "7.7M",
+      "runtime_minutes": 85.8,
+      "runtime_label": "1.4h",
+      "tool_calls": 335,
+      "tool_calls_label": "335"
+    },
+    {
+      "id": "linux-opencode_kimi-k2.5-type_a",
+      "agent": "OpenCode",
+      "model": "Kimi K2.5",
+      "org": "Moonshot AI",
+      "config": "opencode_kimi-k2.5",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260402_002250",
+      "date": "2026-04-02",
+      "path": "linux/opencode_kimi-k2.5/type_a",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 133400000,
+      "tokens_label": "133.4M",
+      "runtime_minutes": 933.0,
+      "runtime_label": "15.6h",
+      "tool_calls": 2368,
+      "tool_calls_label": "2,368"
+    },
+    {
+      "id": "windows-opencode_kimi-k2.5-type_a",
+      "agent": "OpenCode",
+      "model": "Kimi K2.5",
+      "org": "Moonshot AI",
+      "config": "opencode_kimi-k2.5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260512_125711",
+      "date": "2026-05-12",
+      "path": "windows/opencode_kimi-k2.5/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 60000000,
+      "tokens_label": "60.0M",
+      "runtime_minutes": 450.6,
+      "runtime_label": "7.5h",
+      "tool_calls": 1218,
+      "tool_calls_label": "1,218"
+    },
+    {
+      "id": "linux-opencode_kimi-k2.5-type_b",
+      "agent": "OpenCode",
+      "model": "Kimi K2.5",
+      "org": "Moonshot AI",
+      "config": "opencode_kimi-k2.5",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260402_220906",
+      "date": "2026-04-02",
+      "path": "linux/opencode_kimi-k2.5/type_b",
+      "solved": 2,
+      "total": 25,
+      "score": 8.0,
+      "score_label": "8.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 1,
+          "total": 4
+        }
+      },
+      "tokens": 90900000,
+      "tokens_label": "90.9M",
+      "runtime_minutes": 781.9,
+      "runtime_label": "13.0h",
+      "tool_calls": 1614,
+      "tool_calls_label": "1,614"
+    },
+    {
+      "id": "windows-opencode_kimi-k2.5-type_b",
+      "agent": "OpenCode",
+      "model": "Kimi K2.5",
+      "org": "Moonshot AI",
+      "config": "opencode_kimi-k2.5",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260512_125711",
+      "date": "2026-05-12",
+      "path": "windows/opencode_kimi-k2.5/type_b",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 43070000,
+      "tokens_label": "43.1M",
+      "runtime_minutes": 425.2,
+      "runtime_label": "7.1h",
+      "tool_calls": 1060,
+      "tool_calls_label": "1,060"
+    },
+    {
+      "id": "linux-opencode_google-gemma-4-31b-it-type_a",
+      "agent": "OpenCode",
+      "model": "Gemma 4 31B",
+      "org": "Google",
+      "config": "opencode_google-gemma-4-31b-it",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260421_164137",
+      "date": "2026-04-21",
+      "path": "linux/opencode_google-gemma-4-31b-it/type_a",
+      "solved": 0,
+      "total": 25,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 0,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 16800000,
+      "tokens_label": "16.8M",
+      "runtime_minutes": 287.3,
+      "runtime_label": "4.8h",
+      "tool_calls": 736,
+      "tool_calls_label": "736"
+    },
+    {
+      "id": "windows-opencode_google-gemma-4-31b-it-type_a",
+      "agent": "OpenCode",
+      "model": "Gemma 4 31B",
+      "org": "Google",
+      "config": "opencode_google-gemma-4-31b-it",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_a",
+      "setting": "without PoC",
+      "timestamp": "20260510_192757",
+      "date": "2026-05-10",
+      "path": "windows/opencode_google-gemma-4-31b-it/type_a",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 32500000,
+      "tokens_label": "32.5M",
+      "runtime_minutes": 556.5,
+      "runtime_label": "9.3h",
+      "tool_calls": 777,
+      "tool_calls_label": "777"
+    },
+    {
+      "id": "linux-opencode_google-gemma-4-31b-it-type_b",
+      "agent": "OpenCode",
+      "model": "Gemma 4 31B",
+      "org": "Google",
+      "config": "opencode_google-gemma-4-31b-it",
+      "platform": "linux",
+      "platform_label": "Linux",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260421_164137",
+      "date": "2026-04-21",
+      "path": "linux/opencode_google-gemma-4-31b-it/type_b",
+      "solved": 1,
+      "total": 25,
+      "score": 4.0,
+      "score_label": "4.0%",
+      "primitives": {
+        "leak": {
+          "solved": 0,
+          "total": 9
+        },
+        "hread": {
+          "solved": 0,
+          "total": 6
+        },
+        "rip": {
+          "solved": 1,
+          "total": 6
+        },
+        "hwrite": {
+          "solved": 0,
+          "total": 4
+        }
+      },
+      "tokens": 14370000,
+      "tokens_label": "14.4M",
+      "runtime_minutes": 673.6,
+      "runtime_label": "11.2h",
+      "tool_calls": 445,
+      "tool_calls_label": "445"
+    },
+    {
+      "id": "windows-opencode_google-gemma-4-31b-it-type_b",
+      "agent": "OpenCode",
+      "model": "Gemma 4 31B",
+      "org": "Google",
+      "config": "opencode_google-gemma-4-31b-it",
+      "platform": "windows",
+      "platform_label": "Windows",
+      "type": "type_b",
+      "setting": "with PoC",
+      "timestamp": "20260510_192757",
+      "date": "2026-05-10",
+      "path": "windows/opencode_google-gemma-4-31b-it/type_b",
+      "solved": 0,
+      "total": 20,
+      "score": 0.0,
+      "score_label": "0.0%",
+      "primitives": {
+        "aaw": {
+          "solved": 0,
+          "total": 20
+        }
+      },
+      "tokens": 12900000,
+      "tokens_label": "12.9M",
+      "runtime_minutes": 1130.0,
+      "runtime_label": "18.8h",
+      "tool_calls": 429,
+      "tool_calls_label": "429"
+    }
+  ]
+}
